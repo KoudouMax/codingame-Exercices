@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Drawing;
+using System.Text.RegularExpressions;
 
 namespace Questions.Interviews_CSharp; 
 public class Exercises {
@@ -489,7 +490,7 @@ public class Exercises {
     #endregion
 
     #region Stones
-    public static int Magic( List<int> stones)
+    public static int Magic(List<int> stones)
     {
         stones.Sort();
         int i = 0;
@@ -647,6 +648,24 @@ public class Exercises {
 
         // Retourner la chaîne formatée
         return result;
+    }
+    #endregion
+
+    #region Approx
+    public static double Approx_V1(Point[] pts)
+    {
+        int into = 0;
+        for (int i = 0; i < pts.Length; i++)
+        {
+            Point p = pts[i];
+            if (p.x * p.x + p.y * p.y <= 1) into++;
+        }
+        // pi / 4 = into / n
+        return (double)into / pts.Length * 4;
+    }
+
+    public class Point {
+        public double x, y;
     }
     #endregion
 

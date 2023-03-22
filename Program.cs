@@ -1,6 +1,11 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.Collections.Generic;
 using Questions.Interviews_CSharp;
+using Questions.Interviews_CSharp.DesignPatterns.Creation;
+
+var webServiceHelper = WebServiceHelper.Instance;
+
+WebServiceHelper.ConnectToServer();
 
 // Test
 //Console.WriteLine("A.Test(1, 5) " + Exercises.Test(1, 5) );
@@ -75,9 +80,9 @@ using Questions.Interviews_CSharp;
 int[] data = { 1, 2, 1}; // 1
 int[] data2 = { 1, 1, 5 }; // 2
 int[] data3 = { 1, 1, 3, 2 ,3, 2 }; // 3
-int result = Exercises.Solution(data);
-int result2 = Exercises.Solution(data2);
-int result3 = Exercises.Solution(data3);
+int result = Exercises.Magic(data.ToList());
+int result2 = Exercises.Magic(data2.ToList());
+int result3 = Exercises.Magic(data3.ToList());
 
 
 // Afficher le tableau résultant
@@ -92,9 +97,6 @@ int result3 = Exercises.Solution(data3);
 
 //int[,] pile = new int[3,3] { { 1, 1, 1 }, { 1, 3, 1 }, { 1, 1, 1 } };
 //Console.WriteLine("" + Exercises.ComputeDayGains(new int[] { 1,1,2,2,2,3}));
-Console.WriteLine("" + result);
-Console.WriteLine("" + result2);
-Console.WriteLine("" + result3);
 //Exercises.SandPile(pile, 1);
 //Console.WriteLine("" + Exercises.ComputeJoinPoint(480));
 

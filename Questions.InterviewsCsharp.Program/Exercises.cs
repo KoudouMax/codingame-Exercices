@@ -91,10 +91,8 @@ public class Exercises {
 
     #region FindSumPair
     static public int[] FindSumPair(int[] numbers, int k) {
-        var pair = numbers.Where(x => x < k)
-            .FirstOrDefault(x => numbers.Where(y => y < k)
-            .Any(y => x + y == k));
-        return new int[] { pair, k - pair };
+        Array.Sort(numbers);
+        return numbers.Where(x => numbers.Any(y => x + y == k)).ToArray();
     }
     #endregion
 
@@ -199,24 +197,13 @@ public class Exercises {
     #endregion
 
     #region ComputeJoinPoint
-    //public static int ComputeJoinPoint(int s1, int s2) {
-    //    var seq1 = s1 + s1.ToString().Aggregate(0, (acc, cu) => acc + cu);
-    //    var seq2 = s2 + s2.ToString().Aggregate(0, (acc, cu) => acc + cu);
-    //    return 0;
-    //}
     public static int ComputeJoinPoint(int s1, int s2)
     {
-        var digits1 = s1.ToString().Select(c => int.Parse(c.ToString()));
-        var digits2 = s2.ToString().Select(c => int.Parse(c.ToString()));
+        var s1digitsSum = (s1 + "").Select(c => (int)c).Aggregate(new List<int>(), (acc, d) => { acc.Add(acc.DefaultIfEmpty().Last() + d); return acc; });
+        var s2digitsSum = (s2 + "").Select(c => (int)c).Aggregate(new List<int>(), (acc, d) => { acc.Add(acc.DefaultIfEmpty().Last() + d); return acc; });
 
-        var cumSum1 = digits1.Aggregate(new List<int>(), (acc, d) => { acc.Add(acc.DefaultIfEmpty().Last() + d); return acc; });
-        var cumSum2 = digits2.Aggregate(new List<int>(), (acc, d) => { acc.Add(acc.DefaultIfEmpty().Last() + d); return acc; });
-
-        var intersection = cumSum1.Intersect(cumSum2);
-
-        return intersection.Any() ? intersection.First() : -1;
+        return s1digitsSum.Intersect(s2digitsSum).DefaultIfEmpty(-1).First();
     }
-
     #endregion
 
     #region Calc

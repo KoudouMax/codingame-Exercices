@@ -45,5 +45,34 @@
             var actual = Exercises.FindNetworkEndpoint(k, values1, values2);
             Assert.Equal(expected, actual);
         }
+
+        [
+            Theory,
+            InlineData("Kayak"),
+            InlineData("aa"),
+            InlineData("aDa"),
+            InlineData("anona"),
+            InlineData("pop"),
+            InlineData("reifier"),
+            InlineData("semâmes"),
+            InlineData("solos"),
+            InlineData("sugus"),
+        ]
+        public void StringPalindrome_should_return_expected(string value)
+        {
+            var actual = Exercises.StringPalindrome(value);
+            Assert.True(actual);
+        }
+
+        [
+            Theory,
+            InlineData(new int[] { 1, 7, 3, 4, 2, 6, 9 })
+        ]
+        public void ClosesToZero_should_return_expected(int[] values)
+        {
+            int expected = 1;
+            var actual = Exercises.ClosesToZero(values);
+            Assert.Equal(expected, actual);
+        }
     }
 }

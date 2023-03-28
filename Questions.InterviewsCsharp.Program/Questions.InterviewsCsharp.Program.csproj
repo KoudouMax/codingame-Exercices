@@ -11,8 +11,8 @@
     <None Remove="DesignPatterns\" />
     <None Remove="DesignPatterns\Creation\" />
   </ItemGroup>
+
   <ItemGroup>
-    <Folder Include="DesignPatterns\" />
-    <Folder Include="DesignPatterns\Creation\" />
+    <Folder Include="Multithreading\" />
   </ItemGroup>
 </Project>

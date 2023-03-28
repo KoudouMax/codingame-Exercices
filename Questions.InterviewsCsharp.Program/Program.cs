@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Questions.Interviews_CSharp;
 using Questions.Interviews_CSharp.DesignPatterns.Creation;
 
+
 var webServiceHelper = WebServiceHelper.Instance;
 
 WebServiceHelper.ConnectToServer();
@@ -27,6 +28,8 @@ WebServiceHelper.ConnectToServer();
 //Console.WriteLine("FindSmallestInterval() " + Exercises.StringPalindrome("a man"));
 //Console.WriteLine("FindSmallestInterval() " + Exercises.RebuildMessage2(data2));
 //Console.WriteLine("FindSmallestInterval() " + Exercises.RebuildMessage2(data3));
+
+/*Console.WriteLine("StringPalindrome() " + Exercises.FilterDuplicate("Kayak"));*/
 
 
 
@@ -77,13 +80,21 @@ WebServiceHelper.ConnectToServer();
 
 //int result = Exercises.FindNetworkEndpoint(0, fromIds, toIds);
 
-int[] data = { 1, 2, 1}; // 1
+/*int[] data = { 1, 2, 1}; // 1
 int[] data2 = { 1, 1, 5 }; // 2
-int[] data3 = { 1, 1, 3, 2 ,3, 2 }; // 3
+
 int result = Exercises.Magic(data.ToList());
 int result2 = Exercises.Magic(data2.ToList());
 int result3 = Exercises.Magic(data3.ToList());
+*/
+int[] data3 = { 1, 1, 3, 2, 3, 2 }; // 3
 
+
+/*
+foreach (var item in Exercises.FilterDuplicate(data3))
+{
+    Console.WriteLine(item);
+}*/
 
 // Afficher le tableau résultant
 //for (int i = 0; i < result.GetLength(0); i++)
@@ -101,6 +112,6 @@ int result3 = Exercises.Magic(data3.ToList());
 //Console.WriteLine("" + Exercises.ComputeJoinPoint(480));
 
 
-//Console.WriteLine("Join point " + Exercises.ComputeJoinPoint(471, 480));
+Console.WriteLine("Join point " + Exercises.ComputeJoinPoint(471, 480));
 
 Console.ReadKey();

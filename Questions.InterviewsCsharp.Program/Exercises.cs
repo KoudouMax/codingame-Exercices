@@ -98,7 +98,8 @@ public class Exercises {
 
     #region FilterDuplicate
     static public int[] FilterDuplicate(int[] ts) {
-        return ts.DistinctBy(t => t).ToArray();
+       return ts.ToHashSet().ToArray();
+       //return ts.DistinctBy(t => t).ToArray();
     }
     #endregion
 
@@ -123,7 +124,6 @@ public class Exercises {
 
         return squares.Max();
     }
-
     #endregion
 
     #region MyRegion
@@ -364,7 +364,6 @@ public class Exercises {
 
     private static bool IsPrime(int n) {
         if (n <= 1) return false;
-
         return !Enumerable
             .Range(2, (int)Math.Sqrt(n))
             .Any(i => n % i == 0);
@@ -397,12 +396,10 @@ public class Exercises {
     #endregion
 
     #region StringPalindrome
-
     public static bool StringPalindrome(string word) {
         string reverse = new (word.Reverse().ToArray());
         return word.Equals(reverse, StringComparison.InvariantCultureIgnoreCase);
     }
-
     #endregion
 
     #region Scanchar
@@ -448,19 +445,6 @@ public class Exercises {
     }
     #endregion
 
-    #region Palindrome
-    public static void Palindrome() {
-        int n, r, sum = 0, temp;
-        Console.Write("Enter the Number: ");
-        n = int.Parse(Console.ReadLine()); temp = n;
-        while (n > 0) { r = n % 10; sum = (sum * 10) + r; n = n / 10; }
-        if (temp == sum) Console.Write("Number is Palindrome.");
-        else
-            Console.Write("Number is not Palindrome");
-        Console.ReadLine();
-    }
-    #endregion
-
     #region MyRegion
 
     public static int Solution(string[] tab)
@@ -476,7 +460,7 @@ public class Exercises {
     }
     #endregion
 
-    #region Stones
+    #region Magic Stones
     public static int Magic(List<int> stones)
     {
         stones.Sort();
@@ -655,7 +639,6 @@ public class Exercises {
         public double x, y;
     }
     #endregion
-
 
     #region Next
     public static int Next(int n)

@@ -19,9 +19,7 @@ public class WebServiceHelper
         }
 	}
 
-    private WebServiceHelper()
-	{
-	}
+    private WebServiceHelper(){}
 
 	public static void ConnectToServer() {
 		Console.WriteLine("App connecting to server...");

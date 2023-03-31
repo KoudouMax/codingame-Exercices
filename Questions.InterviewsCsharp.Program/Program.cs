@@ -45,33 +45,6 @@ WebServiceHelper.ConnectToServer();
 
 //Console.WriteLine('A' == 'a' ? "Equal": "Not Equal");
 
-//class B {
-//    public B(int n)
-//    {
-//        Console.WriteLine("B("+ n + "), ");
-//    }
-//}
-
-//class C {
-//    static B b1 = new B(1);
-//    B b2 = new B(2);
-
-//    public C()
-//    {
-//        Console.WriteLine("C(), ");
-//    }
-
-//    static B b3 = new B(3);
-//}
-
-//class A {
-//    public static void Main(String[] args)
-//    {
-//        new C();
-//    }
-//    static C C1 = new C();
-//}
-
 //int[,] pile = new int[3, 3] { { 1, 1, 1 }, { 1, 3, 1 }, { 1, 1, 1 } };
 //int n = 1;
 
@@ -87,7 +60,7 @@ int result = Exercises.Magic(data.ToList());
 int result2 = Exercises.Magic(data2.ToList());
 int result3 = Exercises.Magic(data3.ToList());
 */
-int[] data3 = { 1, 1, 3, 2, 3, 2 }; // 3
+//int[] data3 = { 1, 1, 3, 2, 3, 2 }; // 3
 
 
 /*
@@ -112,6 +85,9 @@ foreach (var item in Exercises.FilterDuplicate(data3))
 //Console.WriteLine("" + Exercises.ComputeJoinPoint(480));
 
 
-Console.WriteLine("Join point " + Exercises.ComputeJoinPoint(471, 480));
+// Une classe doit implementer des méthodes 
+
+
+//Console.WriteLine("Join point " + Exercises.ComputeJoinPoint(471, 480));
 
 Console.ReadKey();

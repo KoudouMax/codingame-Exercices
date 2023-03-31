@@ -622,6 +622,14 @@ public class Exercises {
     }
     #endregion
 
+    #region IsTwin
+    public static bool IsTwin(string s1, string s2)
+    {
+        if (s1.Length != s2.Length) return false;
+        return s1.Order().ToString() == s2.Order().ToString();
+    }
+    #endregion
+
     #region Approx
     public static double Approx_V1(Point[] pts)
     {
